@@ -1,0 +1,17 @@
+*.pyc
+*.swp
+.fuse*
+*experiment
+experiment*
+save*
+*pth.tar
+exp*/
+*.zip
+ourarch/*/
+ourarch/*.zip
+data/
+output/
+gg.py
+layout_task/
+.vscode
+__pycache__

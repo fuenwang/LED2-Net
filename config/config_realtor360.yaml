@@ -1,0 +1,65 @@
+dataset_args:
+    type: 'Realtor360Dataset'
+    train:
+        mode: 'train'
+        shape: &shape [512, 1024]
+        dataset_path: &dataset_path '/path/to/dataset/location'
+        image_name: &image_name 'color.png'
+        label_name: &label_name 'label.json'
+        wall_types: &wall_types [4, 6, 8, 10, 12]
+        camera_height: &camera_height 1.6
+        aug:
+            flip: True
+            stretch: True
+            rotate: True
+            gamma: True
+        loader_args:
+            batch_size: 6
+            num_workers: &num_workers 12
+            shuffle: True
+            drop_last: True
+            pin_memory: True
+    val:
+        mode: 'val'
+        shape: *shape
+        dataset_path: *dataset_path
+        image_name: *image_name
+        label_name: *label_name
+        wall_types: *wall_types
+        camera_height: *camera_height
+        aug:
+            flip: False
+            stretch: False
+            rotate: False
+            gamma: False
+        loader_args:
+            batch_size: 1
+            num_workers: *num_workers
+            shuffle: False
+            drop_last: False
+            pin_memory: True
+optimizer_args:
+    type: 'Adam'
+    args:
+        lr: 0.0003
+loss_args:
+    camera_height: *camera_height
+metric_args:
+    field_names: ['IoU_2D', 'IoU_3D']
+network_args:
+    save_path: './save'
+    backbone: 'resnet50'
+exp_args:
+    seed: 229
+    epoch: 1000
+    device: 'cuda:0'
+    multi-gpu: False
+    exp_path: './experiment'
+    exp_freq: 200
+    camera_height: *camera_height
+    visualizer_args:
+        cube_dim: 256
+        equi_shape: *shape
+        camera_FoV: 160
+        fp_dim: 512
+        fp_meters: 20

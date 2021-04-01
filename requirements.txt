@@ -1,0 +1,13 @@
+numpy
+scipy
+scikit-image
+imageio
+opencv-python
+matplotlib
+attrdict
+torch
+torchvision
+torchaudio
+tensorboard
+pytorch3d
+pylsd-nova
