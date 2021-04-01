@@ -98,6 +98,9 @@ python run_inference.py --config YOUR_CONFIG --src SRC_FOLDER/ --dst DST_FOLDER 
 ```
 This script will predict the layouts of all images (jpg or png) under **SRC_FOLDER/** and store the results as json files under **DST_FOLDER/**.
 
+### Pretrained Weights
+We provide the pretrained model of <a href='https://cgv.cs.nthu.edu.tw/projects/dulanet'>Realtor360<a> in this <a href='https://drive.google.com/file/d/1cayRqxee8CxKJnaFQXPc6r6ngWjlgciF/view?usp=sharing'>link</a>.
+
 **Currently, we use DuLa-Net's post processing for inference. We will release the version using HorizonNet's post processing later.**
 
 ## Layout Visualization
