@@ -5,6 +5,7 @@ This is PyTorch implementation of our CVPR 2021 Oral paper "LED<sup>2</sup>-Net:
 **You can visit our project website and upload your own panorama to see the 3D results!**
 
 <a href='https://fuenwang.ml/project/led2net/'>[Project Website]</a>
+<a href='https://arxiv.org/abs/2104.00568/'>[Paper (arXiv)]</a>
 <p align='center'><image src='src/3Dlayout.png' width='100%'></image></p>
 
 ## Prerequisite
