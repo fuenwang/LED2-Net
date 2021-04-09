@@ -113,4 +113,13 @@ python visualizer.py --img xxxxxx.jpg --json xxxxxx.json
 <image src='src/visualize.png' width='50%'>
   
 ## Citation
-The bibtex will be released after CVPR 2021!.
+```bibtex
+@misc{wang2021led2net,
+      title={LED2-Net: Monocular 360 Layout Estimation via Differentiable Depth Rendering}, 
+      author={Fu-En Wang and Yu-Hsuan Yeh and Min Sun and Wei-Chen Chiu and Yi-Hsuan Tsai},
+      year={2021},
+      eprint={2104.00568},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
