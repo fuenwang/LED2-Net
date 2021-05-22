@@ -3,8 +3,8 @@ dataset_args:
     train:
         mode: 'train'
         shape: &shape [512, 1024]
-        dataset_image_path: &dataset_image_path '/path/to/image/location'
-        dataset_label_path: &dataset_label_path '/path/to/label/location'
+        dataset_image_path: &dataset_image_path 'LED2Net/Dataset/LayoutMp3D/image_data'
+        dataset_label_path: &dataset_label_path 'LED2Net/Dataset/LayoutMp3D/label_data'
         image_name: &image_name 'color.jpg'
         wall_types: &wall_types [4, 6, 8, 10, 12]
         camera_height: &camera_height 1.6
@@ -14,7 +14,7 @@ dataset_args:
             rotate: True
             gamma: True
         loader_args:
-            batch_size: 6
+            batch_size: 24
             num_workers: &num_workers 12
             shuffle: True
             drop_last: True
@@ -53,7 +53,7 @@ exp_args:
     seed: 229
     epoch: 1000
     device: 'cuda:0'
-    multi-gpu: False
+    multi-gpu: True
     exp_path: './experiment'
     exp_freq: 200
     camera_height: *camera_height

@@ -28,10 +28,10 @@ class BaseModule(nn.Module):
             print ('Use last epoch, %s'%self.model_lst[-1])
             return self.model_lst[-1], len(self.model_lst)-1
 
-    def Load(self, epoch=None):
+    def Load(self, device, epoch=None):
         name, _ = self._loadName(epoch)
         if name is not None:
-            params = torch.load('%s/%s'%(self.path, name))
+            params = torch.load('%s/%s'%(self.path, name),  map_location=torch.device(device))
             self.load_state_dict(params, strict=False)
             self.best_model = name
             epoch = int(self.best_model.split('_')[-1].split('.')[0]) + 1

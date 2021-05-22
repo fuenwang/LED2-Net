@@ -37,7 +37,7 @@ def read_image(image_path, shape):
     img = imread(image_path, pilmode='RGB').astype(np.float32) / 255
     if img.shape[0] != shape[0] or img.shape[1] != shape[1]: img = cv2.resize(img, dsize=tuple(shape[::-1]), interpolation=cv2.INTER_AREA)
 
-    return img
+    return np.array(img)
 
 def read_label(label_path, cH):
     with open(label_path, 'r') as f: label = json.load(f)

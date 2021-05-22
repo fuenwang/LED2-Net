@@ -153,7 +153,7 @@ def rotatePanorama(img, vp=None, R=None):
     Py = Py.reshape(sphereH, sphereW, order='F')
 
     # boundary
-    imgNew = np.zeros((sphereH+2, sphereW+2, C), np.float64)
+    imgNew = np.zeros((sphereH+2, sphereW+2, C), np.float32)
     imgNew[1:-1, 1:-1, :] = img
     imgNew[1:-1, 0, :] = img[:, -1, :]
     imgNew[1:-1, -1, :] = img[:, 0, :]
@@ -707,7 +707,7 @@ def findMainDirectionEMA(lines):
 
 def multi_linspace(start, stop, num):
     div = (num - 1)
-    y = np.arange(0, num, dtype=np.float64)
+    y = np.arange(0, num, dtype=np.float32)
     steps = (stop - start) / div
     return steps.reshape(-1, 1) * y + start.reshape(-1, 1)
 
@@ -902,7 +902,7 @@ if __name__ == '__main__':
         print('%.6f %.6f %.6f' % tuple(v))
 
     # Visualization
-    edg = rotatePanorama(panoEdge.astype(np.float64), vp[2::-1])
+    edg = rotatePanorama(panoEdge.astype(np.float32), vp[2::-1])
     img = rotatePanorama(img_ori / 255.0, vp[2::-1])
     one = img.copy() * 0.5
     one[(edg > 0.5).sum(-1) > 0] = 0

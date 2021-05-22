@@ -40,6 +40,7 @@ def wrap_lr_pad(net):
         w_pad = int(m.padding[1])
         m.padding = (m.padding[0], 0)
         names = name.split('.')
+
         root = functools.reduce(lambda o, i: getattr(o, i), [net] + names[:-1])
         setattr(
             root, names[-1],
@@ -185,7 +186,7 @@ class Network(BaseModule):
             self.feature_extractor = Densenet(backbone, pretrained=True)
         else:
             raise NotImplementedError()
-        
+
         #self.feature_extractor.encoder.conv1 = nn.Conv2d(4, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 0), bias=False)
         # Inference channels number from each block of the encoder
         with torch.no_grad():
@@ -213,6 +214,8 @@ class Network(BaseModule):
         self.linear.bias.data[2*self.step_cols:3*self.step_cols].fill_(0.425)
         self.x_mean.requires_grad = False
         self.x_std.requires_grad = False
+
+        # 手动实现左右补padding
         wrap_lr_pad(self)
 
     def _prepare_x(self, x):
@@ -240,7 +243,7 @@ class Network(BaseModule):
         cor = output[:, :1]  # B x 1 x W
         bon = output[:, 1:]  # B x 2 x W
 
-        bon = torch.sigmoid(bon) 
+        bon = torch.sigmoid(bon)
         up = bon[:, 0:1, :] * -0.5 * math.pi
         down = bon[:, 1:, :] * 0.5 * math.pi
 

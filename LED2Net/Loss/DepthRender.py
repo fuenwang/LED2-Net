@@ -75,7 +75,7 @@ class Corner2Depth(nn.Module):
 
     def forward_fast(self, corners, nums, shift=None):
         if shift is not None: raise NotImplementedError
-        grid_origin = self.grid.to(corners.device)
+        grid_origin = self.grid.to(corners.device).type(torch.float32)
         eps = 1e-2
         depth_maps = []
         normal_maps = []
@@ -127,7 +127,7 @@ class Corner2Depth(nn.Module):
         # corners is (bs, 12, 3)
         # nums is (bs, )
         # shift is bs x 2 which are x and z shift
-        grid_origin = self.grid.to(corners.device)
+        grid_origin = self.grid.to(corners.device).type(torch.float32)
         eps = 1e-2
         depth_maps = []
         normal_maps = []

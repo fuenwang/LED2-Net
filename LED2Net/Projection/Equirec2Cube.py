@@ -58,7 +58,7 @@ class Equirec2Cube(nn.Module):
         for grid in self.grids:
             grid = grid.to(batch.device)
             grid = grid.repeat(batch.shape[0], 1, 1, 1)
-            sample = F.grid_sample(batch, grid, mode=mode, align_corners=True)
+            sample = F.grid_sample(batch, grid, mode=mode)
             out.append(sample)
         out = torch.cat(out, dim=0)
         final_out = []
