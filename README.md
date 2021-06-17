@@ -114,12 +114,12 @@ python visualizer.py --img xxxxxx.jpg --json xxxxxx.json
   
 ## Citation
 ```bibtex
-@misc{wang2021led2net,
-      title={LED2-Net: Monocular 360 Layout Estimation via Differentiable Depth Rendering}, 
-      author={Fu-En Wang and Yu-Hsuan Yeh and Min Sun and Wei-Chen Chiu and Yi-Hsuan Tsai},
-      year={2021},
-      eprint={2104.00568},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@InProceedings{Wang_2021_CVPR,
+    author    = {Wang, Fu-En and Yeh, Yu-Hsuan and Sun, Min and Chiu, Wei-Chen and Tsai, Yi-Hsuan},
+    title     = {LED2-Net: Monocular 360deg Layout Estimation via Differentiable Depth Rendering},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2021},
+    pages     = {12956-12965}
 }
 ```
