@@ -4,8 +4,8 @@ This is PyTorch implementation of our CVPR 2021 Oral paper "LED<sup>2</sup>-Net:
 
 **You can visit our project website and upload your own panorama to see the 3D results!**
 
-<a href="https://fuenwang.ml/project/led2net/" target="_blank">[Project Website]</a>
-<a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_LED2-Net_Monocular_360deg_Layout_Estimation_via_Differentiable_Depth_Rendering_CVPR_2021_paper.pdf" target="_blank">[Paper]</a>
+<a href="https://fuenwang.ml/project/led2net/">[Project Website]</a>
+<a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_LED2-Net_Monocular_360deg_Layout_Estimation_via_Differentiable_Depth_Rendering_CVPR_2021_paper.pdf">[Paper]</a>
 <p align='center'><image src='src/3Dlayout.png' width='100%'></image></p>
 
 ## Prerequisite
